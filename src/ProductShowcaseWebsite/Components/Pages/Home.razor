@@ -1,7 +1,40 @@
-﻿@page "/"
+﻿
+@page "/"
+@inject ProductDbService Db
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Product Showcase</h1>
 
-Welcome to your new app.
+<p>Here are some products from the database:</p>
+
+@code {
+    private IEnumerable<Product> products = Enumerable.Empty<Product>();
+
+    protected override void OnInitialized()
+    {
+        products = Db.GetProducts();
+    }
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>In Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@(product.InStock ? "Yes" : "No")</td>
+            </tr>
+        }
+    </tbody>
+</table>

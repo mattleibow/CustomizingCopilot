@@ -1,10 +1,15 @@
 using ProductShowcaseWebsite.Components;
+using ProductShowcaseData;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Register ProductDbService as a singleton
+builder.Services.AddSingleton<ProductDbService>(sp =>
+    new ProductDbService("/Users/matthew/Documents/GitHub/CustomizingCopilot/data/ProductDb.json"));
 
 var app = builder.Build();
 
