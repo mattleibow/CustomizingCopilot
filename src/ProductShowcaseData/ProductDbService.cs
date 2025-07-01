@@ -2,7 +2,7 @@ using System.Text.Json;
 
 namespace ProductShowcaseData;
 
-public class ProductDbService
+public class ProductDbService : IProductDbService
 {
     private static readonly JsonSerializerOptions CamelCaseOptions =
         new()
