@@ -1,0 +1,57 @@
+using System.Collections.Generic;
+using System.Linq;
+using Bunit;
+using Microsoft.Extensions.DependencyInjection;
+using NSubstitute;
+using Xunit;
+using ProductShowcaseData;
+using ProductShowcaseWebsite.Components.Pages;
+
+namespace ProductShowcaseWebsite.Tests
+{
+    public class HomeRazorTests : TestContext
+    {
+        private static List<Category> GetCategories() => new()
+        {
+            new Category { Id = "cat1", Name = "Category 1" },
+            new Category { Id = "cat2", Name = "Category 2" }
+        };
+
+        private static List<Product> GetProducts() => new()
+        {
+            new Product { Name = "Product A", CategoryId = "cat1", Price = 10, InStock = true },
+            new Product { Name = "Product B", CategoryId = "cat2", Price = 20, InStock = false },
+            new Product { Name = "Product C", CategoryId = "cat1", Price = 30, InStock = true }
+        };
+
+        [Fact]
+        public void Dropdown_Should_Contain_AllCategories_And_Filter_Products()
+        {
+            // Arrange
+            var mockDb = Substitute.For<IProductDbService>();
+            mockDb.GetCategories().Returns(GetCategories());
+            mockDb.GetProducts().Returns(GetProducts());
+            Services.AddSingleton(mockDb);
+
+            // Act
+            var cut = RenderComponent<Home>();
+
+            // Assert dropdown exists and has All Categories
+            var select = cut.Find("select");
+            Assert.Contains(select.Children, o => o.TextContent == "All Categories");
+
+            // Assert all products shown by default
+            Assert.Equal(3, cut.FindAll("tbody tr").Count);
+
+            // Select Category 1
+            select.Change("cat1");
+            Assert.Equal(2, cut.FindAll("tbody tr").Count);
+            Assert.All(cut.FindAll("tbody tr td:nth-child(2)"), td => Assert.Equal("Category 1", td.TextContent));
+
+            // Select Category 2
+            select.Change("cat2");
+            Assert.Single(cut.FindAll("tbody tr"));
+            Assert.Equal("Category 2", cut.Find("tbody tr td:nth-child(2)").TextContent);
+        }
+    }
+}

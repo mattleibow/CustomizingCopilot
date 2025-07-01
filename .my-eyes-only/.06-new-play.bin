@@ -1,0 +1,7 @@
+/new-playwright 
+
+* load the home page
+* validate that Laptop is in the list of products
+* change the category drop down to Wearables
+* validate that watch is in the list
+* Laptop is not in the list

@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "dotnet build CustomizingCopilot.sln",
+      "group": "build",
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "run website",
+      "type": "shell",
+      "command": "dotnet run --project src/ProductShowcaseWebsite/ProductShowcaseWebsite.csproj --launch-profile https",
+      "group": "test",
+      "problemMatcher": ["$msCompile"],
+      "dependsOn": ["build"],
+      "isBackground": true
+    },
+    {
+      "label": "run tests",
+      "type": "shell",
+      "command": "dotnet test CustomizingCopilot.sln",
+      "group": "test",
+      "problemMatcher": ["$msCompile"],
+      "dependsOn": ["build"]
+    },
+    {
+      "label": "run website and tests",
+      "dependsOn": ["run website", "run tests"],
+      "dependsOrder": "parallel"
+    }
+  ]
+}

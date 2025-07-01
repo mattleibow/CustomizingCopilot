@@ -1,0 +1,16 @@
+Do the following and make sure it is all correct. Follow these steps exactly and do not assume anything.
+
+Use the Playwright MCP
+
+1. Load the home page 
+2. Confirm that "Laptop" is in the list of products. Give the element id of the item
+3. Change the category drop down to "Wearables"
+4. Confirm that "Smartwatch" is in the list. Give the element id of the item
+5. Confirm that "Laptop" is not in the list. Check all items to make sure.
+
+
+After every UI action, explicitly parse and list all visible table rows or relevant elements from
+the latest page snapshot or accessibility tree. Do not rely on previous state or assumptions—always
+re-extract and enumerate the actual content after each change. Only make assertions about presence
+or absence of items based on this direct, up-to-date inspection. If you cannot confirm from the
+latest data, say so and request a new snapshot.
