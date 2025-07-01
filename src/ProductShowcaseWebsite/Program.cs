@@ -8,7 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 // Register ProductDbService as a singleton
-builder.Services.AddSingleton<ProductDbService>(sp =>
+builder.Services.AddSingleton<IProductDbService>(sp =>
     new ProductDbService("/Users/matthew/Documents/GitHub/CustomizingCopilot/data/ProductDb.json"));
 
 var app = builder.Build();
