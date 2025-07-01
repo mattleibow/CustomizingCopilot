@@ -2,18 +2,25 @@
 @page "/"
 @inject IProductDbService Db
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Products</PageTitle>
 
-<h1>Product Showcase</h1>
+<h1>Products</h1>
 
-<p>Here are some products from the database:</p>
+<p>Here are all of our amazing products:</p>
 
 @code {
-    private IEnumerable<Product> products = Enumerable.Empty<Product>();
+    private List<Product> products = new();
+    private List<Category> categories = new();
 
     protected override void OnInitialized()
     {
-        products = Db.GetProducts();
+        products = Db.GetProducts().ToList();
+        categories = Db.GetCategories().ToList();
+    }
+
+    private string GetCategoryName(string categoryId)
+    {
+        return categories.FirstOrDefault(c => c.Id == categoryId)?.Name ?? categoryId;
     }
 }
 
@@ -31,7 +38,7 @@
         {
             <tr>
                 <td>@product.Name</td>
-                <td>@product.Category</td>
+                <td>@GetCategoryName(product.CategoryId)</td>
                 <td>@product.Price.ToString("C")</td>
                 <td>@(product.InStock ? "Yes" : "No")</td>
             </tr>

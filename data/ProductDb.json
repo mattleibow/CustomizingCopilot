@@ -1,40 +1,712 @@
 {
     "version": "1.0",
     "products": {
-        "count": 4,
+        "count": 100,
         "items": [
             {
                 "id": "1",
                 "name": "Laptop",
                 "price": 999.99,
-                "category": "Electronics",
+                "categoryId": "1",
                 "inStock": true
             },
             {
                 "id": "2",
                 "name": "Smartphone",
                 "price": 499.99,
-                "category": "Electronics",
+                "categoryId": "1",
                 "inStock": true
             },
             {
                 "id": "3",
                 "name": "Headphones",
                 "price": 199.99,
-                "category": "Accessories",
+                "categoryId": "2",
                 "inStock": false
             },
             {
                 "id": "4",
                 "name": "Smartwatch",
                 "price": 299.99,
-                "category": "Wearables",
+                "categoryId": "3",
+                "inStock": true
+            },
+            {
+                "id": "5",
+                "name": "Tablet",
+                "price": 399.99,
+                "categoryId": "1",
+                "inStock": true
+            },
+            {
+                "id": "6",
+                "name": "Bluetooth Speaker",
+                "price": 89.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "7",
+                "name": "Fitness Tracker",
+                "price": 129.99,
+                "categoryId": "3",
+                "inStock": false
+            },
+            {
+                "id": "8",
+                "name": "E-Reader",
+                "price": 149.99,
+                "categoryId": "1",
+                "inStock": true
+            },
+            {
+                "id": "9",
+                "name": "Wireless Mouse",
+                "price": 29.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "10",
+                "name": "Gaming Console",
+                "price": 399.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "11",
+                "name": "VR Headset",
+                "price": 299.99,
+                "categoryId": "4",
+                "inStock": false
+            },
+            {
+                "id": "12",
+                "name": "Smart TV",
+                "price": 799.99,
+                "categoryId": "1",
+                "inStock": true
+            },
+            {
+                "id": "13",
+                "name": "Action Camera",
+                "price": 249.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "14",
+                "name": "DSLR Camera",
+                "price": 1099.99,
+                "categoryId": "5",
+                "inStock": false
+            },
+            {
+                "id": "15",
+                "name": "Tripod",
+                "price": 49.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "16",
+                "name": "Camera Bag",
+                "price": 39.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "17",
+                "name": "Monitor",
+                "price": 199.99,
+                "categoryId": "1",
+                "inStock": true
+            },
+            {
+                "id": "18",
+                "name": "Keyboard",
+                "price": 49.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "19",
+                "name": "Smart Light",
+                "price": 24.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "20",
+                "name": "Robot Vacuum",
+                "price": 299.99,
+                "categoryId": "6",
+                "inStock": false
+            },
+            {
+                "id": "21",
+                "name": "Gaming Mouse",
+                "price": 59.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "22",
+                "name": "Gaming Keyboard",
+                "price": 89.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "23",
+                "name": "Streaming Webcam",
+                "price": 79.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "24",
+                "name": "Portable SSD",
+                "price": 129.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "25",
+                "name": "Smart Door Lock",
+                "price": 199.99,
+                "categoryId": "6",
+                "inStock": false
+            },
+            {
+                "id": "26",
+                "name": "Security Camera",
+                "price": 149.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "27",
+                "name": "Photo Printer",
+                "price": 99.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "28",
+                "name": "Camera Lens",
+                "price": 299.99,
+                "categoryId": "5",
+                "inStock": false
+            },
+            {
+                "id": "29",
+                "name": "Drone",
+                "price": 499.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "30",
+                "name": "VR Controller",
+                "price": 69.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "31",
+                "name": "Streaming Microphone",
+                "price": 119.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "32",
+                "name": "Smart Thermostat",
+                "price": 149.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "33",
+                "name": "Smart Bulb",
+                "price": 14.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "34",
+                "name": "Wireless Charger",
+                "price": 39.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "35",
+                "name": "Smart Scale",
+                "price": 49.99,
+                "categoryId": "3",
+                "inStock": false
+            },
+            {
+                "id": "36",
+                "name": "Fitness Band",
+                "price": 79.99,
+                "categoryId": "3",
+                "inStock": true
+            },
+            {
+                "id": "37",
+                "name": "Gaming Chair",
+                "price": 249.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "38",
+                "name": "Streaming Light",
+                "price": 59.99,
+                "categoryId": "2",
+                "inStock": true
+            },
+            {
+                "id": "39",
+                "name": "Photo Editing Tablet",
+                "price": 349.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "40",
+                "name": "Camera Tripod",
+                "price": 59.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "41",
+                "name": "Smart Fridge",
+                "price": 1299.99,
+                "categoryId": "6",
+                "inStock": false
+            },
+            {
+                "id": "42",
+                "name": "Smart Oven",
+                "price": 899.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "43",
+                "name": "Smart Washer",
+                "price": 799.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "44",
+                "name": "Smart Dryer",
+                "price": 799.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "45",
+                "name": "Gaming Monitor",
+                "price": 399.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "46",
+                "name": "Gaming Headset",
+                "price": 129.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "47",
+                "name": "Gaming Desk",
+                "price": 299.99,
+                "categoryId": "4",
+                "inStock": false
+            },
+            {
+                "id": "48",
+                "name": "Gaming Controller",
+                "price": 59.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "49",
+                "name": "Gaming Mousepad",
+                "price": 19.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "50",
+                "name": "Gaming Speakers",
+                "price": 99.99,
+                "categoryId": "4",
+                "inStock": true
+            },
+            {
+                "id": "51",
+                "name": "Photo Studio Light",
+                "price": 149.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "52",
+                "name": "Photo Backdrop",
+                "price": 39.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "53",
+                "name": "Photo Reflector",
+                "price": 24.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "54",
+                "name": "Photo Softbox",
+                "price": 59.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "55",
+                "name": "Photo Umbrella",
+                "price": 19.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "56",
+                "name": "Photo Stand",
+                "price": 29.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "57",
+                "name": "Photo Clamp",
+                "price": 9.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "58",
+                "name": "Photo Filter",
+                "price": 14.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "59",
+                "name": "Photo Remote",
+                "price": 19.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "60",
+                "name": "Photo Battery",
+                "price": 29.99,
+                "categoryId": "5",
+                "inStock": true
+            },
+            {
+                "id": "61",
+                "name": "Smart Plug",
+                "price": 19.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "62",
+                "name": "Smart Switch",
+                "price": 24.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "63",
+                "name": "Smart Sensor",
+                "price": 29.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "64",
+                "name": "Smart Alarm",
+                "price": 49.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "65",
+                "name": "Smart Camera",
+                "price": 99.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "66",
+                "name": "Smart Display",
+                "price": 129.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "67",
+                "name": "Smart Speaker",
+                "price": 79.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "68",
+                "name": "Smart Hub",
+                "price": 99.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "69",
+                "name": "Smart Lock",
+                "price": 149.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "70",
+                "name": "Smart Bell",
+                "price": 59.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "71",
+                "name": "Smart Curtain",
+                "price": 199.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "72",
+                "name": "Smart Fan",
+                "price": 99.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "73",
+                "name": "Smart Heater",
+                "price": 149.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "74",
+                "name": "Smart AC",
+                "price": 499.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "75",
+                "name": "Smart Sprinkler",
+                "price": 79.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "76",
+                "name": "Smart Garage Opener",
+                "price": 129.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "77",
+                "name": "Smart Water Sensor",
+                "price": 39.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "78",
+                "name": "Smart Smoke Detector",
+                "price": 59.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "79",
+                "name": "Smart CO Detector",
+                "price": 59.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "80",
+                "name": "Smart Leak Detector",
+                "price": 49.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "81",
+                "name": "Smart Window Sensor",
+                "price": 29.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "82",
+                "name": "Smart Door Sensor",
+                "price": 29.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "83",
+                "name": "Smart Motion Sensor",
+                "price": 39.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "84",
+                "name": "Smart Glass Break Sensor",
+                "price": 49.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "85",
+                "name": "Smart Siren",
+                "price": 59.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "86",
+                "name": "Smart Button",
+                "price": 19.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "87",
+                "name": "Smart Dimmer",
+                "price": 29.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "88",
+                "name": "Smart Outlet",
+                "price": 24.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "89",
+                "name": "Smart Strip",
+                "price": 39.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "90",
+                "name": "Smart Power Meter",
+                "price": 49.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "91",
+                "name": "Smart Water Valve",
+                "price": 69.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "92",
+                "name": "Smart Garage Sensor",
+                "price": 39.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "93",
+                "name": "Smart Pet Feeder",
+                "price": 99.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "94",
+                "name": "Smart Pet Door",
+                "price": 149.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "95",
+                "name": "Smart Pet Camera",
+                "price": 129.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "96",
+                "name": "Smart Pet Toy",
+                "price": 39.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "97",
+                "name": "Smart Pet Fountain",
+                "price": 49.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "98",
+                "name": "Smart Pet Collar",
+                "price": 59.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "99",
+                "name": "Smart Pet Tracker",
+                "price": 69.99,
+                "categoryId": "6",
+                "inStock": true
+            },
+            {
+                "id": "100",
+                "name": "Smart Plug",
+                "price": 19.99,
+                "categoryId": "6",
                 "inStock": true
             }
         ]
     },
     "categories": {
-        "count": 3,
+        "count": 6,
         "items": [
             {
                 "id": "1",
@@ -47,6 +719,18 @@
             {
                 "id": "3",
                 "name": "Wearables"
+            },
+            {
+                "id": "4",
+                "name": "Gaming"
+            },
+            {
+                "id": "5",
+                "name": "Photography"
+            },
+            {
+                "id": "6",
+                "name": "Home Automation"
             }
         ]
     }
