@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../ProductShowcaseData/ProductShowcaseData.csproj" />
+    <ProjectReference Include="../../src/ProductShowcaseData/ProductShowcaseData.csproj" />
   </ItemGroup>
 
 </Project>
