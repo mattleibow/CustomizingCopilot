@@ -29,6 +29,14 @@
       "label": "run website and tests",
       "dependsOn": ["run website", "run tests"],
       "dependsOrder": "parallel"
+    },
+    {
+      "label": "run image MCP server",
+      "type": "shell",
+      "command": "npx -y @modelcontextprotocol/inspector dotnet run --project src/ImageMcpServer/ImageMcpServer.csproj",
+      "group": "test",
+      "problemMatcher": ["$msCompile"],
+      "dependsOn": ["build"]
     }
   ]
 }

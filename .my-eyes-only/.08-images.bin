@@ -1,0 +1,15 @@
+Can you go through every product in this json file and then to an image search to find the best image. 
+
+Guide:
+* Use the product name as the search query. 
+* Update the product by adding a "imageUrl" property in the json. 
+* Do all 100 items.
+* Process in chunks of 10.
+
+The process should be:
+1. get the product name of the first 10
+2. do the image search for each of the 10
+3. update the 10 product entry in the file
+4. continue
+
+Always update the file as you do it as there are too many to do in a single go.

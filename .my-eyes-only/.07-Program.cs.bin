@@ -1,0 +1,85 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
+using ModelContextProtocol.Server;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
+
+
+// Create a generic host builder for dependency injection, logging, and configuration.
+var builder = Host.CreateApplicationBuilder(args);
+
+// Configure logging for better integration with MCP clients.
+builder.Logging.AddConsole(consoleLogOptions =>
+{
+    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
+});
+
+// Register the MCP server and configure it to use stdio transport.
+// Scan the assembly for tool definitions.
+builder.Services
+    .AddHttpClient()
+    .AddMcpServer()
+    .WithStdioServerTransport()
+    .WithToolsFromAssembly();
+
+// Build and run the host. This starts the MCP server.
+await builder.Build().RunAsync();
+
+
+
+[McpServerToolType]
+public partial class ImageSearchTool(HttpClient httpClient)
+{
+    [McpServerTool]
+    [Description("Returns a list of image URLs based on the search query.")]
+    public List<string> GetImageUrls(string? query, int limit = 5)
+    {
+        var results = new List<string>();
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            return results;
+        }
+        try
+        {
+            // Use Bing Images search page
+            var uri = $"https://www.bing.com/images/search?q={Uri.EscapeDataString(query)}&qft=+filterui%3aphoto-photo+filterui%3aimagesize-medium&first=1";
+            var response = httpClient.GetAsync(uri).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var html = response.Content.ReadAsStringAsync().Result;
+                var urls = ParseImageUrlsFromBingHtml(html);
+                results.AddRange(urls);
+            }
+        }
+        catch
+        {
+            // Swallow exceptions and return empty list for robustness
+        }
+        return results.Take(limit).ToList();
+    }
+
+    private static List<string> ParseImageUrlsFromBingHtml(string html)
+    {
+        var urls = new List<string>();
+        try
+        {
+            foreach (Match match in MurlRegex().Matches(html))
+            {
+                if (match.Success && match.Groups.Count > 1)
+                {
+                    urls.Add(match.Groups[1].Value);
+                }
+            }
+        }
+        catch
+        {
+            // Ignore parse errors
+        }
+        return urls;
+    }
+
+    [GeneratedRegex("&quot;murl&quot;:&quot;(https?://.*?)(?:&quot;)")]
+    private static partial Regex MurlRegex();
+}

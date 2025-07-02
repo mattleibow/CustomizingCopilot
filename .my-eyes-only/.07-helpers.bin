@@ -1,0 +1,26 @@
+﻿
+private static string GetUrlForQuery(string query) =>
+    $"https://www.bing.com/images/search?q={Uri.EscapeDataString(query)}&qft=+filterui%3aphoto-photo+filterui%3aimagesize-medium&first=1";
+
+private static List<string> ParseImageUrlsFromBingHtml(string html)
+{
+    var urls = new List<string>();
+    try
+    {
+        foreach (Match match in MurlRegex().Matches(html))
+        {
+            if (match.Success && match.Groups.Count > 1)
+            {
+                urls.Add(match.Groups[1].Value);
+            }
+        }
+    }
+    catch
+    {
+        // Ignore parse errors
+    }
+    return urls;
+}
+
+[GeneratedRegex("&quot;murl&quot;:&quot;(https?://.*?)(?:&quot;)")]
+private static partial Regex MurlRegex();

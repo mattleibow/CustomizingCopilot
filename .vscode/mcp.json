@@ -9,6 +9,15 @@
 		// 		"msedge"
 		// 	],
 		// 	"type": "stdio"
+		// },
+		// "bing": {
+		// 	"command": "dotnet",
+		// 	"args": [
+		// 		"run",
+		// 		"--project",
+		// 		"src/ImageMcpServer/ImageMcpServer.csproj"
+		// 	],
+		// 	"type": "stdio"
 		// }
 	}
 }
